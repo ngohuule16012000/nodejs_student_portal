@@ -19,5 +19,12 @@ add git repository:
     git init
     create .gitignore -- tên thư mục ko cần up lên git
 
+    git add . -- thêm tất cả
+
+    git commit -m "first commit"
+
+    git remote add origin https://github.com/ngohuule16012000/nodejs_student_portal.git
+
+    git push -u origin main
 
 
