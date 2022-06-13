@@ -1,0 +1,34 @@
+{
+  "name": "student_portal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --inspect index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngohuule16012000/nodejs_student_portal.git"
+  },
+  "keywords": [
+    "student",
+    "portal",
+    "nodejs",
+    "nodejs",
+    "student",
+    "portal"
+  ],
+  "author": "ngohuule",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ngohuule16012000/nodejs_student_portal/issues"
+  },
+  "homepage": "https://github.com/ngohuule16012000/nodejs_student_portal#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}

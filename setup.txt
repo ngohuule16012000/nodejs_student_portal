@@ -1,0 +1,23 @@
+Terminal:
+    npm init
+set:
+    git repository: https://github.com/ngohuule16012000/nodejs_student_portal.git
+    keywords: student portal, nodejs, nodejs student portal
+    author: ngohuule
+=> package.json
+
+create: index.js
+
+install:
+    npm i express   => node_modules, package_clock.json
+    (http://expressjs.com/en/starter/installing.html)
+    
+    npm i nodemon --save-dev
+    create "start": "nodemon index.js" in "script" of package.json
+
+add git repository:
+    git init
+    create .gitignore -- tên thư mục ko cần up lên git
+
+
+
