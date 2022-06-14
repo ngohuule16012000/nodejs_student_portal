@@ -15,6 +15,15 @@ install:
     npm i nodemon --save-dev
     create "start": "nodemon index.js" in "script" of package.json
 
+    npm i morgan --save-dev
+    -- show logger http in terminal
+
+    npm i express-handlebars
+    -- show html
+
+    npm i node-sass --save-dev
+    create "watch": "node-sass -w app/resources/scss -o app/public/css" in "script" of package.json
+
 add git repository:
     git init
     create .gitignore -- tên thư mục ko cần up lên git
@@ -25,6 +34,10 @@ add git repository:
 
     git remote add origin https://github.com/ngohuule16012000/nodejs_student_portal.git
 
+    git branch -m main -- master -> main
+
     git push -u origin main
 
-
+run:
+    npm start
+    npm run watch
