@@ -1,0 +1,99 @@
+<div class="row col-12">
+  <div class="col-9">
+    <div class="container col-9">
+    <div class="row justify-content-center">
+    <div class="card my-3 " style='border-radius: 10px ;'>
+      <div class="card-body d-flex mt-2">
+        <a href="">
+          <img width="58" height="58" class="rounded-circle me-2" src='{{img}}'/>
+        </a>
+        <button type="button" class="form-control text-secondary border-light text-start rounded-pill postmess fs-4 option1" data-bs-toggle="modal" data-bs-target="#postmess">
+          Bạn đang nghĩ gì thế?
+        </button>
+      </div>
+      <div class="card-body d-flex border-top">
+        <button class="mx-1 d-flex justify-content-center align-items-center form-control text-secondary rounded border-light options" data-bs-toggle="modal" data-bs-target="#video">
+          <img width="30" height="30" src="https://img.icons8.com/external-prettycons-flat-prettycons/47/undefined/external-video-social-media-prettycons-flat-prettycons.png"/>
+          <h5 class="ps-1 pt-1">Video</h5>
+        </button>
+        <button class="mx-1 d-flex justify-content-center align-items-center form-control text-secondary rounded border-light options" data-bs-toggle="modal" data-bs-target="#image">
+          <img width="30" height="30" src="https://img.icons8.com/fluency/48/undefined/image-gallery.png"/>
+          <h5 class="ps-1 pt-1">Ảnh</h5>
+        </button>
+        <button class="mx-1 d-flex justify-content-center align-items-center form-control text-secondary rounded border-light options" data-bs-toggle="modal" data-bs-target="#feel">
+          <img width="30" height="30" src="https://img.icons8.com/color-glass/48/undefined/happy.png"/>
+          <h5 class="ps-1 pt-1">Cảm xúc/Hoạt động</h5>
+        </button>
+      </div>
+    </div>
+
+    {{#each news}}
+    {{!-- <template id="MyTemplate"> --}}
+    <div class="card my-3" style='border-radius: 10px ;'>
+      <div class="card-body d-flex align-items-center mt-2">
+        <a href="">
+          <img width="58" height="58" class="rounded-circle me-2" src='{{this.basic.img}}'/>
+        </a>
+        <div class="d-flex flex-column align-content-center flex-wrap fs-4">
+          <a class="fs-5 text-dark textlink" href="">
+            <strong>{{this.basic.name}}</strong>
+          </a>
+          <div class="d-flex align-items-center">
+            <a class="fs-6 text-dark textlink pe-1" href="" title="time">thời gian</a>
+            <img title="Công khai" width="20" height="20" class="" src="https://img.icons8.com/windows/32/undefined/globe.png"/>
+          </div>
+        </div>
+      </div>
+      <div class="card-body messagetext">
+        <p>
+            {{this.content}}
+        </p>
+        {{#if this.filetoupload}}
+        <img src="{{this.filetoupload.[0]}}" class="mx-auto d-block">
+        {{/if}}
+      </div>
+
+      <div class="card-body d-flex justify-content-between border-top fs-4">
+        <div class="d-flex align-items-center">
+          <a href="" title="Thích">
+            <img width="30" height="30" src="https://img.icons8.com/external-justicon-flat-justicon/64/undefined/external-like-notifications-justicon-flat-justicon.png"/>
+          </a>
+          <a href="" title="Yêu thích">
+            <img width="30" height="30" title="Yêu thích" src="https://img.icons8.com/external-justicon-flat-justicon/64/undefined/external-heart-notifications-justicon-flat-justicon.png"/>
+          </a>
+          <a class="text-dark textlink ps-2" title="list" href="">
+            100
+          </a>
+        </div>
+        <div>
+          <a class="text-dark textlink ps-2" title="list" href="">
+            20 bình luận
+          </a>
+        </div>
+      </div>
+
+      <div class="card-body d-flex border-top">
+        <button class="mx-1 d-flex justify-content-center align-items-center form-control text-secondary rounded border-light options" data-bs-toggle="modal" data-bs-target="#video">
+          <img width="30" height="30" src="https://img.icons8.com/external-kmg-design-detailed-outline-kmg-design/64/undefined/external-like-feedback-kmg-design-detailed-outline-kmg-design.png"/>
+          <h5 class="ps-2 pt-1">Thích</h5>
+        </button>
+        <button class="mx-1 d-flex justify-content-center align-items-center form-control text-secondary rounded border-light options" data-bs-toggle="modal" data-bs-target="#image">
+          <img width="30" height="30" src="https://img.icons8.com/ios/50/undefined/comments.png"/>
+          <h5 class="ps-2 pt-1">Bình luận</h5>
+        </button>
+        <button class="mx-1 d-flex justify-content-center align-items-center form-control text-secondary rounded border-light options" data-bs-toggle="modal" data-bs-target="#feel">
+          <img width="30" height="30" src="https://img.icons8.com/external-those-icons-lineal-those-icons/24/undefined/external-share-network-sharing-those-icons-lineal-those-icons-1.png"/>
+          <h5 class="ps-2 pt-1">Chia sẻ</h5>
+        </button>
+      </div>
+    </div>
+    {{!-- </template> --}}
+    {{/each}}
+
+  </div>
+  </div>
+  </div>
+  <div class="col-3 bg-success">
+    <h1>col 3</h1>
+  </div>
+</div>

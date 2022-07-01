@@ -1,44 +1,41 @@
-document.addEventListener("DOMContentLoaded", function(event) {
-   
-    const showNavbar = (toggleId, navId, bodyId, headerId) =>{
-        const toggle = document.getElementById(toggleId),
-        nav = document.getElementById(navId),
-        bodypd = document.getElementById(bodyId),
-        headerpd = document.getElementById(headerId)
-    
-        // Validate that all variables exist
-        if(toggle && nav && bodypd && headerpd){
-            toggle.addEventListener('click', ()=>{
-            // show navbar
-            nav.classList.toggle('show')
-            // change icon
-            toggle.classList.toggle('bx-x')
-            // add padding to body
-            bodypd.classList.toggle('body-pd')
-            // add padding to header
-            headerpd.classList.toggle('body-pd')
-            })
-        }
-    }
-    
-    showNavbar('header-toggle','nav-bar','body-pd','header')
-    
-    /*===== LINK ACTIVE =====*/
-    const linkColor = document.querySelectorAll('.nav_link')
-    
-    function colorLink(){
-        if(linkColor){
-            linkColor.forEach(l=> l.classList.remove('active'))
-            this.classList.add('active')
-        }
-    }
-    linkColor.forEach(l=> l.addEventListener('click', colorLink))
-    
-     // Your code to run since DOM is loaded and ready
+function signOut() 
+{
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () 
+    {
+    	console.log('User signed out.');
+    });
+};
+
+// Emoji
+$('.textareapost').emojioneArea({
+	pickerPosition: 'top'
 });
 
-$(document).ready(function(){
-    $("#sidebarCollapse").on('click', function(){
-        $("#sidebar").toggleClass('active');
-    });
-});
+// //template tag
+// var temp, item, a, i;
+// temp = document.querySelector("#MyTemplate");
+// for (i = 0; i < 10; i++) {
+//   var clone = temp.content.cloneNode(true);
+//   var messagetext = clone.querySelectorAll('.messagetext');
+//   messagetext[0].innerHTML = "Message " + i;
+//   temp.parentNode.appendChild(clone);
+// }
+
+// show image when upload in post
+const imageInput = document.querySelector('#inputImage');
+
+imageInput.addEventListener("change", function()  
+{
+	console.log(imageInput.value);
+	let reader = new FileReader();
+
+	reader.addEventListener("load", () => {
+		const uploadedImage = reader.result;
+		// document.querySelector("#showImage").style.backgroundImage = `url(${uploadedImage})`;
+		document.querySelector("#showImage").src = `${uploadedImage}`;
+		// document.querySelector("#inputImage").hidden = true;
+	})
+	console.log(this.files[0]);
+	reader.readAsDataURL(this.files[0]);
+})

@@ -1,42 +1,59 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light mt-10">
-  <div class="container">
-	
-    <a class="navbar-brand" href="/">Blog dev</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<div class="row col-12">
+  <!-- Navbar -->
+  <nav class="navbar sticky-top sticky-top navbar-expand-lg navbar-light bg-light ">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Blog dev</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="https://avatar-redirect.appspot.com/google/109023826614717592641?size=400" alt="" class="user-avatar">
+              Menu
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/courses/create">Đăng khóa học</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/me/stored/courses">Khóa học của tôi</a>
+              <a class="dropdown-item" href="/me/stored/news">Bài viết của tôi</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Đăng xuất</a>
+            </div>
+            
+          </li>
+        </ul>
+        <!-- Left links -->
+      </div>
+      <!-- Collapsible wrapper -->
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-		
-      <ul class="navbar-nav ml-auto align-text-right">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <img src="https://avatar-redirect.appspot.com/google/109023826614717592641?size=400" alt="" class="user-avatar">
-            Menu
+      <!-- Right elements -->
+      <div class="d-flex align-items-center">
+        <div>
+          <strong>{{admin}}</strong>
+        </div>
+        <!-- Avatar -->
+        <div class="dropdown mx-2" >
+          <a href="#" class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <img width="32" height="32" class="rounded-circle me-2" src='{{img}}'/>
+            <span class="oi oi-caret-bottom"></span>
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/courses/create">Đăng khóa học</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="/me/stored/courses">Khóa học của tôi</a>
-            <a class="dropdown-item" href="/me/stored/news">Bài viết của tôi</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Đăng xuất</a>
-          </div>
-          
-        </li>
-      </ul>
-		<div class="dropdown" >
-			<a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-			<img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-			<strong>mdo</strong>
-			</a>
-			<ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-			<li><a class="dropdown-item" href="#">New project...</a></li>
-			<li><a class="dropdown-item" href="#">Settings</a></li>
-			<li><a class="dropdown-item" href="#">Profile</a></li>
-			<li><hr class="dropdown-divider"></li>
-			<li><a class="dropdown-item" href="#">Sign out</a></li>
-			</ul>
-		</div>
-  </div>
-</nav>
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+            <li><a class="dropdown-item" href="#">New project...</a></li>
+            <li><a class="dropdown-item" href="/update_profile">Cập nhật</a></li>
+            <li><a class="dropdown-item" href="/profile">Thông tin cá nhân</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/logout" onclick="signOut();">Đăng xuất</a></li>
+          </ul>
+      </div>
+      </div>
+    </div>
+  </nav>
+</div>
+
+
+

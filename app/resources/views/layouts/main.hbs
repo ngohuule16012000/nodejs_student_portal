@@ -2,7 +2,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="961577146224-5g55pkdq84d5565f19eu9p7rn6l569fc.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <title>Document</title>
     {{!-- css --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -12,14 +13,35 @@
     <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet">
 
     {{!-- app.css --}}
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/style.css?rnd=1">
+
+    {{!-- google platform integrate login google--}}
+
+    {{!-- Emoji --}}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.css" rel="stylesheet">
 </head>
 <body>
-    
+
+    {{#if log}}
 
     {{{body}}}
+    
+    {{else}}
 
-    {{> footer}}
+    <div class="row col-12">
+        {{> sidebar}}
+        <div class="col-lg-10 col-md-9 col-8">
+            {{> header}}
+            {{{body}}}
+        </div>
+        {{> footer}}
+    </div>
+    {{> modal}}
+
+    {{/if}}
+
+
+    
 
     {{!-- javascript --}}
     {{!-- bundle --}}
@@ -35,9 +57,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" rel="stylesheet">
 
+    {{!-- Emoji --}}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.js"></script>
+
     {{!-- Font Awesome JS --}}
     <script src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"></script>
+
+    
 
     <script src="/stylesheets/main.js"></script>
 </body>

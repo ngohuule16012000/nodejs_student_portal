@@ -1,0 +1,87 @@
+<div class="container col-12 mt-5">
+    {{#if flash }}
+      <div class="container">
+        <div class="row d-flex justify-content-center align-items-center">
+          <div class="col-lg-9 m-4">
+              <div class="alert alert-{{flash.type}} alert-dismissible fade show">
+                <strong></strong><span>{{flash.message}}</span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+              </div>
+          </div>
+        </div>
+      </div>
+    {{/if}}
+    <div class='card text-black' style='border-radius: 25px;'>
+        <a class="card-img-top text-center my-2 mt-3  bg-light btn btn-none" >
+            <img
+                data-bs-toggle="modal" 
+                data-bs-target="#upload"
+                src='{{profile.img}}'
+                width="200"
+                height="200"
+                class='rounded-circle'
+                alt='Sample image'
+            />
+        </a>
+        <div class='card-body'>
+            <div class='row text-center mb-10'>
+                <h5 class="card-title">{{profile.name}}</h5>
+            </div>
+        </div>
+        <div class='card-body'>
+            <div class='row justify-content-center'>
+                <div class='col-10'>
+                  <ul class="list-group list-group-flush">
+
+                    <li class="list-group-item">
+                      <div class="row">
+                        <div class="col-5">
+                          <h3>Tên hiển thị</h3>
+                        </div>
+                        <div class="col-7">
+                          <p class="fs-4">abc</p>
+                        </div>
+                      </div>
+                    </li>
+                    
+                    <li class="list-group-item">
+                      <div class="row">
+                        <div class="col-5">
+                          <h3>Lớp</h3>
+                        </div>
+                        <div class="col-7">
+                          <p class="fs-4">18050303</p>
+                        </div>
+                      </div>
+                    </li>
+                    
+                    <li class="list-group-item">
+                      <div class="row">
+                        <div class="col-5">
+                          <h3>Khoa</h3>
+                        </div>
+                        <div class="col-7">
+                          <p class="fs-4">CNTT</p>
+                        </div>
+                      </div>
+                    </li>
+
+                  </ul>
+                  
+                </div>
+
+            </div>
+
+            
+        </div>
+        <div class="card-body">
+          <div class='d-flex justify-content-center mx-4 mb-3 mb-lg-4'>
+            <a
+              href="/update_profile"
+              type='button'
+              class='btn btn-primary btn-lg'
+            >Cập nhật</a>
+          </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,401 @@
+<!-- Upload Modal -->
+<div class="modal fade" id="upload" tabindex="-1" aria-labelledby="uploadLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="uploadLabel">Upload hình ảnh đại diện</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <form method="POST" enctype="multipart/form-data" action="/upload?_method=PUT" >
+      <div class="modal-body">
+          <input type="file" class="form-control" name="filetoupload">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        <button type="submit" class="btn btn-primary">Upload</button>
+      </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<!-- POST Modal -->
+<div class="modal fade" id="postmess" tabindex="-1" aria-labelledby="postmessLabel" aria-hidden="true" >
+  <div class="modal-dialog modal-lg modal-dialog-centered" >
+    <div class="modal-content" style='border-radius: 10px ;'>
+      <div class="modal-header d-flex bd-highlight">
+        <div class="p-2 w-100 bd-highlight text-center">
+          <h5 class="modal-title w-100 fs-3" id="postmessLabel">Tạo bài viết</h5>
+        </div>
+        <div class="p-2 flex-shrink-1 bd-highlight">
+          <button type="button"class="btn-close" data-bs-dismiss="modal" ></button>
+        </div>
+      </div>
+
+      <form action="/admin/storenews?_method=PUT" method="POST">
+        <div class="modal-body">
+          <div class="d-flex align-items-center mb-3 ">
+            <a href="">
+              <img width="58" height="58" class="rounded-circle me-2" src='{{img}}'/>
+            </a>
+            <div class="d-flex flex-column align-content-center flex-wrap fs-4">
+              <a class="fs-5 text-dark textlink" href="">
+                <strong>{{admin}}</strong>
+              </a>
+              <div class="dropdown d-flex">
+                <a class="nav-link dropdown-toggle text-dark border postmess d-inline fs-6" style='border-radius: 20px ;' 
+                  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img width="25" height="25" src="https://img.icons8.com/windows/32/undefined/globe.png"/>
+                  <span name="viewing">Công khai</span>
+                  <input type="hidden" name="viewing" value='Công khai'/>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </div>
+            </div>
+            
+          </div>
+          <textarea name="content" type="text" class="textareapost form-control border-none fs-3 bg-image" placeholder="Bạn đang nghĩ gì thế?" rows="3"></textarea>
+          
+        </div>
+
+        <div class="modal-body">
+          <div class="d-flex justify-content-between align-content-center p-2 border border-2" style='border-radius: 10px ;'>
+            <h5 class="d-flex align-items-center">
+              Thêm vào bài viết
+            </h5>
+            <div class="d-flex justify-content-between align-content-center">
+              <a class="options rounded-circle m-1 p-1" href="" title='Hình ảnh' data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#image">
+                <img width="40" height="40" src="https://img.icons8.com/fluency/48/undefined/image-gallery.png"/>
+              </a>
+              
+              <a class="options rounded-circle m-1 p-1" href="" title='Cảm xúc/Hoạt động' data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#feel">
+                <img width="40" height="40" src="https://img.icons8.com/color-glass/48/undefined/happy.png"/>
+              </a>
+
+              <a class="options rounded-circle m-1 p-1" href="" title='Video'>
+                <img width="40" height="40" src="https://img.icons8.com/external-prettycons-flat-prettycons/47/undefined/external-video-social-media-prettycons-flat-prettycons.png"/>
+              </a>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary rounded form-control fs-4">Đăng bài</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<!-- Image Modal -->
+<div class="modal fade" id="image" tabindex="-1" aria-labelledby="imageLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" >
+    <div class="modal-content" style='border-radius: 10px ;'>
+      <div class="modal-header d-flex bd-highlight">
+        <div class="p-2 w-100 bd-highlight text-center">
+          <h5 class="modal-title w-100 fs-3" id="imageLabel">Tạo bài viết</h5>
+        </div>
+        <div class="p-2 flex-shrink-1 bd-highlight">
+          <button type="button"class="btn-close" data-bs-dismiss="modal" ></button>
+        </div>
+      </div>
+
+      <form action="/admin/storenews?_method=PUT" enctype="multipart/form-data" method="POST">
+        <div class="modal-body">
+          <div class="d-flex align-items-center mb-3 ">
+            <a href="">
+              <img width="58" height="58" class="rounded-circle me-2" src='{{img}}'/>
+            </a>
+            <div class="d-flex flex-column align-content-center flex-wrap fs-4">
+              <a class="fs-5 text-dark textlink" href="">
+                <strong>{{admin}}</strong>
+              </a>
+              <div class="dropdown d-flex">
+                <a class="nav-link dropdown-toggle text-dark border postmess d-inline fs-6" style='border-radius: 20px ;' 
+                  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img width="25" height="25" src="https://img.icons8.com/windows/32/undefined/globe.png"/>
+                  <span>Công khai</span> 
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </div>
+            </div>
+            
+          </div>
+          <textarea name="content" type="text" class="textareapost form-control border-none fs-3 bg-image" placeholder="Bạn đang nghĩ gì thế?" rows="3"></textarea>
+          <input type="file" id="inputImage" class="form-control rounded my-2" name="filetoupload">
+          <img id="showImage" class="mx-auto d-block">
+          </img>
+        </div>
+
+        <div class="modal-body">
+          <div class="d-flex justify-content-between align-content-center p-2 border border-2" style='border-radius: 10px ;'>
+            <h5 class="d-flex align-items-center">
+              Thêm vào bài viết
+            </h5>
+            <div class="d-flex justify-content-between align-content-center">
+              <a class="options rounded-circle m-1 p-1" href="" title='Hình ảnh'>
+                <img width="40" height="40" src="https://img.icons8.com/fluency/48/undefined/image-gallery.png"/>
+              </a>
+              
+              <a class="options rounded-circle m-1 p-1" href="" title='Cảm xúc/Hoạt động'>
+                <img width="40" height="40" src="https://img.icons8.com/color-glass/48/undefined/happy.png"/>
+              </a>
+
+              <a class="options rounded-circle m-1 p-1" href="" title='Video'>
+                <img width="40" height="40" src="https://img.icons8.com/external-prettycons-flat-prettycons/47/undefined/external-video-social-media-prettycons-flat-prettycons.png"/>
+              </a>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary rounded form-control fs-4">Đăng bài</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<!-- Feel Modal -->
+<div class="modal fade" id="feel" tabindex="-1" aria-labelledby="feelLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg">
+    <div class="modal-content" style='border-radius: 10px ;'>
+      <div class="modal-header d-flex bd-highlight">
+        <div class="p-2 flex-shrink-1 bd-highlight">
+          <button type="button" class="btn postmess" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#postmess"><img src="https://img.icons8.com/material-outlined/24/undefined/left.png"/></button>
+        </div>
+        <div class="p-2 w-100 bd-highlight text-center">
+          <h5 class="modal-title w-100 fw-bold fs-3" id="feelLabel">Bạn đang cảm thấy thế nào?</h5>
+        </div>
+      </div>
+
+      <form action="">
+        <div class="modal-body">
+          <div class="d-flex">
+            <button type="button" class="m-1 border-white bg-white form-control rounded" disabled>
+              <h5>Cảm xúc</h5>
+            </button>            
+            <button type="button" class="m-1 border-white form-control text-secondary rounded options" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#activity">
+              <h5>Hoạt động</h5>
+            </button>
+          </div>    
+          <div class="d-flex">
+            <button class="m-1 border-white form-control bg-primary rounded " disabled>
+            </button>            
+            <button class="m-1 border-white form-control bg-white text-secondary rounded" disabled>
+            </button>
+          </div>       
+          
+          <div class="d-flex form-control rounded-pill postmess my-2">
+            <img src="https://img.icons8.com/fluency-systems-filled/48/undefined/search.png"/>
+            <input type="text" class="form-control-plaintext postmess text-secondary border-none text-start  fs-5 option1"  placeholder="Tìm kiếm">
+            </input>
+          </div>
+
+          <div class="modal-body " style="max-height: 500px; overflow: scroll;">
+            
+            
+            <div class="d-flex flex-row">
+              <div class="flex-column w-50">
+              {{#each feelicon1}} 
+              <div class="d-flex">
+                <button class="m-1 border-white d-flex justify-content-start align-content-center form-control text-secondary rounded option1">
+                  <div class="border border-3 p-2 rounded-circle postmess">
+                    <img width="20" height="20" src="{{this.link}}">
+                  </div>
+                  <div class="m-2">
+                    <h5>{{this.name}}</h5>
+                  </div>
+                </button>  
+              </div>   
+              {{/each}}
+              </div>
+              
+              <div class="flex-column w-50">
+              {{#each feelicon2}} 
+              <div class="d-flex">
+                <button class="m-1 border-white d-flex justify-content-start align-content-center form-control text-secondary rounded option1">
+                  <div class="border border-3 p-2 rounded-circle postmess">
+                    <img width="20" height="20" src="{{this.link}}">
+                  </div>
+                  <div class="m-2">
+                    <h5>{{this.name}}</h5>
+                  </div>
+                </button>  
+              </div>   
+              {{/each}}
+              </div>
+              
+            </div> 
+            
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Activity Modal -->
+<div class="modal fade" id="activity" tabindex="-1" aria-labelledby="activityLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg">
+    <div class="modal-content" style='border-radius: 10px ;'>
+      <div class="modal-header d-flex bd-highlight">
+        <div class="p-2 flex-shrink-1 bd-highlight">
+          <button type="button" class="btn postmess" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#postmess"><img src="https://img.icons8.com/material-outlined/24/undefined/left.png"/></button>
+        </div>
+        <div class="p-2 w-100 bd-highlight text-center">
+          <h5 class="modal-title w-100 fw-bold fs-3" id="activityLabel">Bạn đang làm gì?</h5>
+        </div>
+      </div>
+
+      <form action="">
+        <div class="modal-body">
+          <div class="d-flex">
+            <button type="button" class="m-1 border-white form-control rounded options" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#feel">
+              <h5>Cảm xúc</h5>
+            </button>            
+            <button class="m-1 border-white form-control bg-white text-secondary rounded" disabled>
+              <h5>Hoạt động</h5>
+            </button>
+          </div>    
+          <div class="d-flex">
+            <button class="m-1 border-white form-control bg-white rounded" disabled>
+            </button>            
+            <button class="m-1 border-white form-control bg-primary text-secondary rounded" disabled>
+            </button>
+          </div>       
+          
+          <div class="d-flex form-control rounded-pill postmess my-2">
+            <img src="https://img.icons8.com/fluency-systems-filled/48/undefined/search.png"/>
+            <input type="text" class="form-control-plaintext postmess text-secondary border-none text-start fs-5 option1"  placeholder="Tìm kiếm">
+            </input>
+          </div>
+
+          <div class="modal-body " style="max-height: 500px; overflow: scroll;">
+            
+            
+            <div class="d-flex flex-row">
+              <div class="flex-column w-100">
+              {{#each activityicon}} 
+              <div class="d-flex">
+                <button  type="button" class="m-1 border-white d-flex justify-content-start align-content-center align-items-center form-control text-secondary rounded option1"
+                    {{!-- data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#{{this._id}}"> --}}
+                    data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#a{{this._id}}">
+                  <div class="border border-3 p-2 rounded-circle postmess">
+                    <img width="20" height="20" src="{{this.link}}">
+                  </div>
+                  <div class="m-2 w-100 text-start">
+                    <h5>{{this.name}}</h5>
+                  </div>
+                  <img src="https://img.icons8.com/external-those-icons-fill-those-icons/24/undefined/external-right-arrows-those-icons-fill-those-icons-1.png"/>
+                </button>  
+              </div>  
+
+              {{/each}}
+              </div>
+              
+            </div> 
+            
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- Each Activity Modal -->
+{{#each activityicon}} 
+<div class="modal fade" id="a{{this._id}}" tabindex="-1" aria-labelledby="a{{this._id}}Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg">
+    <div class="modal-content" style='border-radius: 10px ;'>
+      <div class="modal-header d-flex bd-highlight">
+        <div class="p-2 flex-shrink-1 bd-highlight">
+          <button type="button" class="btn postmess" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#postmess"><img src="https://img.icons8.com/material-outlined/24/undefined/left.png"/></button>
+        </div>
+        <div class="p-2 w-100 bd-highlight text-center">
+          <h5 class="modal-title w-100 fw-bold fs-3" id="a{{this._id}}Label">Bạn đang {{this.name}}...</h5>
+        </div>
+      </div>
+
+      <form action="">
+        <div class="modal-body">
+          <div class="d-flex">
+            <button type="button" class="m-1 border-white form-control rounded options" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#feel">
+              <h5>Cảm xúc</h5>
+            </button>            
+            <button class="m-1 border-white form-control bg-white text-secondary rounded" disabled>
+              <h5>Hoạt động</h5>
+            </button>
+          </div>    
+          <div class="d-flex">
+            <button class="m-1 border-white form-control bg-white rounded" disabled>
+            </button>            
+            <button class="m-1 border-white form-control bg-primary text-secondary rounded" disabled>
+            </button>
+          </div>        
+          
+          <div class="d-flex form-control rounded-pill postmess my-2">
+            <img src="https://img.icons8.com/fluency-systems-filled/48/undefined/search.png"/>
+            <input type="text" class="form-control-plaintext postmess text-secondary border-none text-start  fs-5 option1"  placeholder="Tìm kiếm">
+            </input>
+          </div>
+
+          <div class="modal-body " style="max-height: 500px; overflow: scroll;">
+            
+            
+            <div class="d-flex flex-row">
+              <div class="flex-column w-100">
+              {{#each this.icons}} 
+              <div class="d-flex">
+                <button  type="button" class="m-1 border-white d-flex justify-content-start align-content-center align-items-center form-control text-secondary rounded option1">
+                    {{!-- data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#{{this._id}}"> --}}
+                  <div class="p-2">
+                    <img width="60" height="60" src="{{this.link}}">
+                  </div>
+                  <div class="m-2 w-100 text-start">
+                    <h5>{{this.name}}</h5>
+                  </div>
+                  {{!-- <img src="https://img.icons8.com/external-those-icons-fill-those-icons/24/undefined/external-right-arrows-those-icons-fill-those-icons-1.png"/> --}}
+                </button>  
+              </div>  
+              {{else}}
+              <div class="min-vh-100">
+                <p class="text-center" >Không tìm thấy kết quả</p>
+              </div>
+              {{/each}}
+              </div>
+              
+            </div> 
+            
+          </div>
+
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+{{/each}}

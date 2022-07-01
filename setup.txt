@@ -24,20 +24,49 @@ install:
     npm i node-sass --save-dev
     create "watch": "node-sass -w app/resources/scss -o app/public/css" in "script" of package.json
 
+    npm i mongoose
+    -- mongoose for database
+
+    npm i prettier lint-staged husk --save-dev
+    -- format code, before push git
+    -- set in package.json
+
+    npm i express-session --save
+    
+    npm i mongoose-slug-generator
+    -- create slug auto in mongoose db
+
+    npm i method-override
+    -- post, get, put, delete method
+
+    npm i mongoose-delete
+    -- support soft delete
+
+    npm i express-fileupload
+    -- handle upload
+
+    npm i passport
+    npm i passport-google-oauth20
+    -- google oauth
+
+    npm i mongoose-sequence
+    -- for auto increase id
+
 add git repository:
     git init
-    create .gitignore -- tên thư mục ko cần up lên git
+    create .gitignore   -- tên thư mục ko cần up lên git
 
-    git add . -- thêm tất cả
+    git add .           -- thêm tất cả
 
     git commit -m "first commit"
 
     git remote add origin https://github.com/ngohuule16012000/nodejs_student_portal.git
 
-    git branch -m main -- master -> main
+    git branch -m main  -- master -> main
 
     git push -u origin main
 
 run:
-    npm start
-    npm run watch
+    npm start           -- run project
+    npm run watch       -- .sass -> .css
+    npm run beautiful   -- format code

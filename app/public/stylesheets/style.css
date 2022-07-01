@@ -1,0 +1,17 @@
+.postmess {
+  background-color: #e9ecef; }
+
+.options:hover {
+  background-color: #e9ecef; }
+
+.option1:hover {
+  background-color: #dee2e6; }
+
+.setborder {
+  border-color: #dee2e6; }
+
+.textlink {
+  text-decoration: none; }
+
+.textlink:hover {
+  text-decoration: underline; }
